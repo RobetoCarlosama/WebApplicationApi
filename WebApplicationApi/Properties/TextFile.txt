@@ -1,0 +1,1 @@
+﻿Scaffold-DbContext "server=.\SQLEXPRESS;database=Prueba5;user id=sa;password=PruebaTecnica2022;Integrated Security=true;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir RptData -context ApplicationDbContext1 -Tables Reporte -Force

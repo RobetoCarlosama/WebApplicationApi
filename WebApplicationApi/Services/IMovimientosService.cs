@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using WebApplicationApi.Models;
+using WebApplicationApi.RptData;
 
 namespace WebApplicationApi.Services
 {
@@ -7,5 +9,6 @@ namespace WebApplicationApi.Services
     {
         void Add(MovimientosAdd movimientosAdd);
         IEnumerable<Movimientos> GetAll();
+                
     }
 }

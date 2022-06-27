@@ -16,6 +16,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebApplicationApi.Adapters;
+using WebApplicationApi.RptData;
 using WebApplicationApi.Services;
 
 namespace WebApplicationApi
@@ -36,6 +37,12 @@ namespace WebApplicationApi
                     options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection"),
                     ef => ef.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)),
+                    ServiceLifetime.Scoped);
+
+            services.AddDbContext<ApplicationDbContext1>(options =>
+                    options.UseSqlServer(
+                    Configuration.GetConnectionString("DefaultConnection"),
+                    ef => ef.MigrationsAssembly(typeof(ApplicationDbContext1).Assembly.FullName)),
                     ServiceLifetime.Scoped);
 
 
@@ -61,6 +68,7 @@ namespace WebApplicationApi
             services.AddTransient<IClienteService, ClienteService>();
             services.AddTransient<ICuentaService, CuentaService>();
             services.AddTransient<IMovimientosService, MovimientosService>();
+            services.AddTransient<IReporte, ReporteService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
